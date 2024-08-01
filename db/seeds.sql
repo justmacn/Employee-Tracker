@@ -1,1 +1,3 @@
-\c employee_tracker_db;
+\c employee_db;
+
+INSERT INTO 
