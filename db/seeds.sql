@@ -1,3 +1,9 @@
 \c employee_db;
 
-INSERT INTO 
+INSERT INTO department(name)
+VALUES
+    ('Engineering'),
+    ('Engineering'),
+    ('Engineering'),
+    ('Engineering'),
+    ('Security');
