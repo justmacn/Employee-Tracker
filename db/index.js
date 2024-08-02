@@ -1,6 +1,7 @@
 
 const pool = require('./connection');
 
+// Database class to build SQL db in JS
 class DB {
   constructor() {}
 
