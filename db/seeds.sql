@@ -26,7 +26,7 @@ INSERT INTO employee(rank, first_name, last_name, role_id, manager_id)
 VALUES 
     ('Captian', 'Michael', 'Burnham', 1),
     ('Commander', 'Saru', 'Billy Badass' 2, 1),
-    ('Commander', 'Nahn', '""' 3, 1),
+    ('Commander', 'Nahn', "" 3, 1),
     ('Lt. Commander', 'Paul', 'Stamets' 4, 2),
     ('Lieutenant JG', 'R.A.', 'Bryce' 5, 2),
     ('Doctor', 'Hugh', 'Culber' 6, 2),
