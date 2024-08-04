@@ -4,7 +4,8 @@
   "description": "cli application to track employees in a given database",
   "main": "index.js",
   "scripts": {
-    "sql": "psql -U postgres"
+    "sql": "psql -U postgres",
+    "start": "node index.js"
   },
   "keywords": [
     "js",
@@ -15,6 +16,7 @@
   "license": "none",
   "dependencies": {
     "asciiart-logo": "^0.2.6",
+    "colors": "^1.4.0",
     "inquirer": "8.2.4",
     "pg": "^8.11.3"
   }

@@ -4,7 +4,7 @@ INSERT INTO department(name)
 VALUES
     ('Command'),
     ('Bridge Crew'),
-    ('Security');
+    ('Security'),
     ('Medical'),
     ('Science'),
     ('Engineering');
@@ -24,13 +24,13 @@ VALUES
 
 INSERT INTO employee(rank, first_name, last_name, role_id, manager_id)
 VALUES 
-    ('Captian', 'Michael', 'Burnham', 1),
-    ('Commander', 'Saru', 'Billy Badass' 2, 1),
-    ('Commander', 'Nahn', "" 3, 1),
-    ('Lt. Commander', 'Paul', 'Stamets' 4, 2),
-    ('Lieutenant JG', 'R.A.', 'Bryce' 5, 2),
-    ('Doctor', 'Hugh', 'Culber' 6, 2),
-    ('Lieutenant', 'Keyla', 'Detmer' 7, 1),
-    ('Lieutenant JG', 'Sylvia', 'Tilly' 8, 2),
-    ('Lieutenant', 'Gen', 'Rhys' 9, 2),
-    ('Lieutenant JG', 'Joann', 'Owosekun' 10, 2);
+    ('Captian', 'Michael', 'Burnham', 1, NULL),
+    ('Commander', 'Saru', '""', 2, 1),
+    ('Commander', 'Nhan', '""', 3, 1),
+    ('Lt. Commander', 'Paul', 'Stamets', 4, 2),
+    ('Lieutenant JG', 'R.A.', 'Bryce', 5, 2),
+    ('Doctor', 'Hugh', 'Culber', 6, 2),
+    ('Lieutenant', 'Keyla', 'Detmer', 7, 1),
+    ('Lieutenant JG', 'Sylvia', 'Tilly', 8, 2),
+    ('Lieutenant', 'Gen', 'Rhys', 9, 2),
+    ('Lieutenant JG', 'Joann', 'Owosekun', 10, 2);
