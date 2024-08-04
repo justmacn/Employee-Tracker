@@ -9,7 +9,7 @@ const db = new DB()
 // call init function
 init();
 
-// function to initialize the app
+// initialize the app
 function init() {
     // branded logo for application using asciiart package
     const brand = logo({ name: 'USS Discovery (NCC-1031)' }).render()
@@ -19,7 +19,7 @@ function init() {
     runPrompts();
 }
 
-// function to run the app prompts
+// run the app prompts
 function runPrompts() {
     console.log('The USS Discovery Crew Database')
     prompt([
@@ -64,16 +64,16 @@ function runPrompts() {
         },
     ]).then((res) => {
         let userInput = res.selected;
-        // Call the appropriate function depending on what the user chose
+        // call the appropriate query depending on what the user chose
         switch (userInput) {
             case "VIEW_DEPARTMENTS":
                 viewAllDepartments();
                 break;
-            case "VIEW_EMPLOYEES":
-                viewAllEmployees();
-                break;
             case "VIEW_ROLES":
                 viewAllRoles();
+                break;
+            case "VIEW_EMPLOYEES":
+                viewAllEmployees();
                 break;
             case "ADD_DEPARTMENT":
                 addDepartment();
@@ -93,3 +93,30 @@ function runPrompts() {
     });
 }
 
+// view all departments from db
+function viewAllDepartments() {
+    db.selectDepartments()
+        .then(({ rows }) => {
+            let allDepartments = rows;
+            console.table("\n" + allDepartments);
+        }).then(() => runPrompts());
+}
+
+// view all roles from db
+function viewAllRoles() {
+    db.selectRoles()
+        .then(({ rows }) => {
+            let allRoles = rows;
+            console.log("\n");
+            console.table(allRoles);
+        }).then(() => runPrompts());
+}
+
+function viewAllEmployees() {
+    db.selectEmployees()
+        .then(({ rows }) => {
+            let allEmployees = rows;
+            console.log("\n");
+            console.table(allEmployees);
+        }).then(() => runPrompts());
+}

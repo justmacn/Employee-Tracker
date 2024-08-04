@@ -1,7 +1,7 @@
 // require the connection to the db
 const pool = require('./connection');
 
-// Database class to build SQL db in JS
+// database class to access SQL db in JS
 class DB {
   constructor() {}
 
@@ -16,7 +16,7 @@ class DB {
   }
 
   // selects all departments 
-  selectAllDepartments() {
+  selectDepartments() {
     return this.query(`
   SELECT
     department.id, department.name
@@ -24,7 +24,7 @@ class DB {
   `)}
 
   // selects all roles w/ department
-  selectAllRoles() {
+  selectRoles() {
     return this.query(`
   SELECT 
     role.id, 
@@ -36,7 +36,7 @@ class DB {
   `)}
 
   // selects all employees w/ role + department
-  selectAllEmployees() {
+  selectEmployees() {
     return this.query(`
   SELECT 
     employee.id, 
