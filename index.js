@@ -55,7 +55,7 @@ function runPrompts() {
                 },
                 {
                     name: "Update Crew Member's Role",
-                    value: "UPDATE_EMPLOYEE_ROLE",
+                    value: "UPDATE_EMPLOYEE",
                 },
                 {
                     name: "Exit Database",
@@ -248,3 +248,61 @@ function addEmployee() {
         });
     });
 }
+
+// update employee in db
+function updateEmployee() {
+    db.selectEmployees().then(({ rows }) => {
+      let allEmployees = rows;
+      const employeesList = allEmployees.map(({ id, rank, first_name, last_name }) => ({
+        name: `${rank} ${first_name} ${last_name}`,
+        value: id,
+      }));
+  
+      prompt([
+        {
+          type: "list",
+          name: "employee_id",
+          message: "Select the crew member who's role you want to update:",
+          choices: employeesList,
+        },
+      ]).then((res) => {
+        let employeeId = res.employeeId;
+        db.selectRoles().then(({ rows }) => {
+          let allRoles = rows;
+          const rolesList = allRoles.map(({ id, title }) => ({
+            name: title,
+            value: id,
+          }));
+  
+          prompt([
+            {
+              type: "list",
+              name: "role_id",
+              message:
+                "Select the role you want to assign to this crew member:",
+              choices: rolesList,
+            },
+            {
+              type: "list",
+              name: "manager_id",
+              message:
+                "Select the manager of the newly assigned role:",
+              choices: employeesList,
+            },
+          ]).then((res) => {
+            let roleId = res.role_id;
+            let managerId = res.manager_id;
+            db.updateEmployee(employeeId, roleId, managerId)})
+
+            .then(() => console.log(`Crew member (id:${employeeId}) has been updated in the database!`))
+            .then(() => runPrompts());
+        });
+      });
+    });
+  }
+
+// close the app
+function quit() {
+    console.log(`Live long and propser 🖖`);
+    process.exit();
+  }

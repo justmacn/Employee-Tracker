@@ -77,12 +77,12 @@ class DB {
   )}
 
   //updates an employee role from the table
-  updateEmployee(employee_id, role_id) {
+  updateEmployee(employeeId, roleId, managerId) {
     return this.query(`
   UPDATE 
     employee 
-  SET role_id = $1 
-  WHERE id = $2;`, [employee_id, role_id]
+  SET role_id = $1, manager_id = $2 
+  WHERE id = $3;`, [roleId, managerId, employeeId]
   )}
 }
 
