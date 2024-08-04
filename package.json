@@ -1,0 +1,21 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "cli application to track employees in a given database",
+  "main": "index.js",
+  "scripts": {
+    "sql": "psql -U postgres"
+  },
+  "keywords": [
+    "js",
+    "node",
+    "psql"
+  ],
+  "author": "Justmacn",
+  "license": "none",
+  "dependencies": {
+    "asciiart-logo": "^0.2.6",
+    "inquirer": "8.2.4",
+    "pg": "^8.11.3"
+  }
+}
