@@ -1,8 +1,11 @@
+-- create or recreate db if it exists
 DROP DATABASE IF EXISTS employee_db;
 CREATE DATABASE employee_db;
 
+-- connect to the db
 \c employee_db;
 
+-- create the 3NF tables
 CREATE TABLE department (
     id SERIAL PRIMARY KEY,
     name VARCHAR(30) UNIQUE NOT NULL

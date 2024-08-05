@@ -1,5 +1,7 @@
+-- connect to the db
 \c employee_db;
 
+-- add rows to the department table
 INSERT INTO department(name)
 VALUES
     ('Command'),
@@ -9,6 +11,7 @@ VALUES
     ('Science'),
     ('Engineering');
 
+-- add rows to the role table
 INSERT INTO role(title, salary, department_id)
 VALUES
     ('Commanding Officer', 100000, 1),
@@ -22,11 +25,12 @@ VALUES
     ('Tatical Officer', 65000, 2),
     ('Operations Officer', 65000, 2);
 
+-- add rows to the employee table
 INSERT INTO employee(rank, first_name, last_name, role_id, manager_id)
 VALUES 
     ('Captian', 'Michael', 'Burnham', 1, NULL),
-    ('Commander', 'Saru', '""', 2, 1),
-    ('Commander', 'Nhan', '""', 3, 1),
+    ('Commander', 'Saru', ' ', 2, 1),
+    ('Commander', 'Nhan', ' ', 3, 1),
     ('Lt. Commander', 'Paul', 'Stamets', 4, 2),
     ('Lieutenant JG', 'R.A.', 'Bryce', 5, 2),
     ('Doctor', 'Hugh', 'Culber', 6, 2),
