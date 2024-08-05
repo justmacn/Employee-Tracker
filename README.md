@@ -53,7 +53,7 @@ This cli application can be used to generate and manage an employee database of 
 
 ### Mock-up
 
-![An employee tracker app demo gif](./images/note_landing.png)
+
 <div style="text-align: center; font-style: italic;">Demo</div>
 
 
