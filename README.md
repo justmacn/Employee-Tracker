@@ -53,7 +53,7 @@ This cli application can be used to generate and manage an employee database of 
 
 ### Mock-up
 
-[![Demo](https://raw.githubusercontent.com/justmacn/employee-tracker/main/assets/demo-thumbnail.png)](https://raw.githubusercontent.com/justmacn/employee-tracker/main/assets/demo.mp4)
+https://github.com/user-attachments/assets/a332723c-8cc0-48f5-8c17-1b583b61edc2
 <div style="text-align: center; font-style: italic;">Demo</div>
 
 
